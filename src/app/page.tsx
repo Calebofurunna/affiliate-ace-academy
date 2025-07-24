@@ -3,6 +3,8 @@
 
 import { useState } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
+import Logo from '../../public/affiliate-ace-academy-logo.png';
 
 export default function Home() {
   const [formData, setFormData] = useState({ name: '', email: '' });
@@ -59,7 +61,10 @@ export default function Home() {
           content="affiliate marketing, affiliate program, digital marketing, online income, passive income, affiliate commissions, marketing training, affiliate network, earn money online, social media marketing"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://affiliateaceacademy.com" />
+        <link
+          rel="canonical"
+          href="https://affiliate-ace-academy.vercel.app/"
+        />
         <meta
           property="og:title"
           content="Affiliate Ace Academy - Affiliate Ace is Active"
@@ -69,7 +74,10 @@ export default function Home() {
           content="Join thousands of successful affiliates earning passive income. High commissions, proven products, expert support."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://affiliateaceacademy.com" />
+        <meta
+          property="og:url"
+          content="https://affiliate-ace-academy.vercel.app/"
+        />
       </Head>
 
       <div className="min-h-screen bg-white">
@@ -78,21 +86,18 @@ export default function Home() {
           <div className="container mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center shadow-sm">
-                  <span className="text-3xl">🎯</span>
-                </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-black">
-                    Affiliate Ace Academy
-                  </h1>
-                  <p className="text-gray-600 text-sm">
-                    Affiliate Ace is Active
-                  </p>
+                  <Image
+                    src={Logo}
+                    alt="Affiliate Ace Academy Logo"
+                    width={200}
+                    height={50}
+                  />
                 </div>
               </div>
               <a
                 href="#join"
-                className="hidden md:block bg-red-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-600 transition-colors"
+                className="bg-red-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-600 transition-colors"
               >
                 Join Now
               </a>
@@ -384,12 +389,12 @@ export default function Home() {
           <div className="container mx-auto px-6">
             <div className="text-center">
               <div className="flex items-center justify-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
-                  <span className="text-2xl">🎯</span>
-                </div>
-                <h3 className="text-2xl font-bold text-black">
-                  Affiliate Ace Academy
-                </h3>
+                <Image
+                  src={Logo}
+                  alt="Affiliate Ace Academy Logo"
+                  width={200}
+                  height={50}
+                />
               </div>
               <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
                 Empowering individuals to build successful affiliate marketing
