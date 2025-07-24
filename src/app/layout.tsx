@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Logo from '../../public/affiliate-ace-academy-logo.png';
 import './globals.css';
 
 const geistSans = Geist({
@@ -55,9 +56,9 @@ export const metadata: Metadata = {
       'Join thousands of successful affiliates earning passive income. High commissions, proven products, expert support.',
     images: [
       {
-        url: '/affiliate-ace-academy-logo.png',
-        width: 1200,
-        height: 630,
+        url: Logo.src,
+        width: Logo.width || 1200,
+        height: Logo.height || 630,
         alt: 'Affiliate Ace Academy Logo',
         type: 'image/png',
       },
@@ -68,31 +69,17 @@ export const metadata: Metadata = {
     title: 'Affiliate Ace Academy - Turn Your Network Into Income',
     description:
       'Join thousands of successful affiliates earning passive income. High commissions, proven products, expert support.',
-    images: ['/affiliate-ace-academy-logo.png'],
+    images: [Logo.src],
     creator: '@affiliateace', // Replace with your actual Twitter handle
     site: '@affiliateace', // Replace with your actual Twitter handle
   },
   icons: {
     icon: [
-      {
-        url: '/affiliate-ace-academy-logo.png',
-        sizes: '32x32',
-        type: 'image/png',
-      },
-      {
-        url: '/affiliate-ace-academy-logo.png',
-        sizes: '16x16',
-        type: 'image/png',
-      },
+      { url: Logo.src, sizes: '32x32', type: 'image/png' },
+      { url: Logo.src, sizes: '16x16', type: 'image/png' },
     ],
-    apple: [
-      {
-        url: '/affiliate-ace-academy-logo.png',
-        sizes: '180x180',
-        type: 'image/png',
-      },
-    ],
-    shortcut: '/affiliate-ace-academy-logo.png',
+    apple: [{ url: Logo.src, sizes: '180x180', type: 'image/png' }],
+    shortcut: Logo.src,
   },
   manifest: '/site.webmanifest',
   metadataBase: new URL('https://affiliate-ace-academy.vercel.app'),
@@ -122,10 +109,7 @@ export default function RootLayout({
         />
         <meta name="theme-color" content="#ef4444" />
         <meta name="msapplication-TileColor" content="#ef4444" />
-        <meta
-          name="msapplication-TileImage"
-          content="/affiliate-ace-academy-logo.png"
-        />
+        <meta name="msapplication-TileImage" content={Logo.src} />
 
         {/* Structured Data */}
         <script
@@ -136,7 +120,7 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'Affiliate Ace Academy',
               url: 'https://affiliate-ace-academy.vercel.app',
-              logo: 'https://affiliate-ace-academy.vercel.app/affiliate-ace-academy-logo.png',
+              logo: `https://affiliate-ace-academy.vercel.app${Logo.src}`,
               description:
                 'Join Affiliate Ace Academy and transform your social presence into a profitable business.',
               sameAs: [
